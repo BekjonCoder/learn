@@ -1,19 +1,36 @@
-.learn h1 {
-  text-align: center;
-  transform: rotateX(10deg);
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f0f4f8;
   margin: 0;
   padding: 20px;
+  line-height: 1.6;
+  color: #333;
 }
 
+/* HEADER */
+.learn h1 {
+  text-align: center;
+  transform: rotateX(10deg);
+  font-size: 1.8rem;
+  color: #10b981;
+  margin-bottom: 20px;
+}
+
+/* FLEX UTIL */
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
+/* CONTAINER */
 .container {
   max-width: 500px;
   margin: auto;
@@ -23,10 +40,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-}
-
+/* INPUT GROUP */
 .input-group {
   display: flex;
   justify-content: space-between;
@@ -39,6 +53,8 @@ input {
   margin-right: 5px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
 input:focus {
@@ -46,6 +62,7 @@ input:focus {
   outline: none;
 }
 
+/* BUTTONS */
 button {
   padding: 10px 15px;
   background: #10b981;
@@ -53,12 +70,15 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
 }
 
 button:hover {
   background: #059669;
 }
 
+/* LIST ITEMS */
 ul {
   list-style: none;
   padding: 0;
@@ -69,6 +89,7 @@ li {
   margin: 5px 0;
   padding: 10px;
   border-radius: 8px;
+  transition: background 0.3s;
 }
 
 li:hover {
@@ -81,6 +102,11 @@ li:hover {
   background: #f0f0f0;
 }
 
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+}
+
 .actions button {
   margin-left: 5px;
   padding: 5px 10px;
@@ -89,6 +115,7 @@ li:hover {
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 .actions button:hover {
@@ -103,6 +130,7 @@ li:hover {
   background: #dc2626;
 }
 
+/* MESSAGE */
 .message {
   background: #d1fae5;
   color: #065f46;
@@ -110,8 +138,10 @@ li:hover {
   padding: 10px;
   border-radius: 8px;
   margin: 20px 0;
+  font-weight: bold;
 }
 
+/* PROGRESS BAR */
 .progress-container {
   background: #d1fae5;
   border-radius: 20px;
@@ -129,6 +159,7 @@ li:hover {
   transition: width 0.5s;
 }
 
+/* MODAL */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -165,24 +196,54 @@ li:hover {
   margin-left: 10px;
 }
 
+/* ACCORDION */
 .accordion-content {
   padding: 10px;
   background: #f9fafb;
   border-top: 1px solid #e5e7eb;
 }
 
-@media (max-width: 600px) {
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
   .container {
-    padding: 10px;
+    max-width: 90%;
+    padding: 15px;
   }
+
   .input-group {
     flex-direction: column;
   }
+
   input {
     width: 100%;
     margin: 0 0 10px 0;
   }
+
   button {
     width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .learn h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.95rem;
   }
 }
